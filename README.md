@@ -4,11 +4,11 @@
 
 Translation to English/Johns Hopkins terminology
 
-Positivi: Active
-Guariti: Recovered
-Deceduti: Deaths
-Tamponi: Tested
-Casi Totale: Confirmed cases 
+Positivi: Active. 
+Guariti: Recovered. 
+Deceduti: Deaths. 
+Tamponi: Tested. 
+Casi Totale: Confirmed cases. 
 Casi Totale Province: Confirmed cases, province-level data. Should match “Casi Totale”
 
 ## Data sources:

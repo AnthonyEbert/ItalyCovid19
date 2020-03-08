@@ -12,9 +12,14 @@ x = x %>%
 x$key <- stringr::str_sub(x$key, start = 2) %>%
   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
 
-x <- x %>% tidyr::pivot_wider(names_from = "Country.Region", values_from = "value")
+x <- x %>% 
+  tidyr::pivot_wider(
+    names_from = "Country.Region", 
+    values_from = "value"
+  ) %>%
+  rename(date = key)
 
-readr::write_excel_csv(x, path = "johns-hopkins-download/transition_matrix_countries.csv")
+readr::write_excel_csv(x, path = "johns-hopkins-download/transition_matrix_countries_confirmed.csv")
 
 
 

@@ -1,4 +1,4 @@
-Va qui invece https://github.com/pcm-dpc/COVID-19 per i dati direttamente dal governo italiano
+Va qui invece https://github.com/pcm-dpc/COVID-19 per i dati direttamente dal governo italiano. 
 Go here instead https://github.com/pcm-dpc/COVID-19 for data direct from the Italian government
 
 # Covid information by province and region in Italy. 

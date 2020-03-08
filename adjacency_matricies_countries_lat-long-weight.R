@@ -12,7 +12,7 @@ x1 <- x %>%
 
 # Create adjacency matrix
 
-kol = ItalyCovid19::create_adjacency_matrix(x1$Country.Region, x1$Lat, x1$Long) %>%
-  as.data.frame()
+kol = ItalyCovid19::create_adjacency_matrix(x1$Country.Region, x1$Lat, x1$Long)
+diag(kol) = 0
 
 write.csv(kol, "johns-hopkins-download/adjacency_matrix_countries_lat-long-weight.csv")

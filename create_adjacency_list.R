@@ -1,8 +1,9 @@
 library(dplyr)
+library(Matrix)
 
 francesco_mat = readxl::read_xlsx(
     "Francesco/Adjacence matrix done.xlsx"
-  )[-c(1,84),-c(1,2,3)] %>%
+  )[-c(1,86),-c(1,2,3)] %>%
   as.matrix()
 
 diag(francesco_mat) = 0

@@ -17,7 +17,6 @@ Afghanistan,Pakistan,3
 Afghanistan,Russia,1
 Afghanistan,Saudi Arabia,1
 Afghanistan,United Arab Emirates,1
-Afghanistan,Vietnam,27
 Albania,Algeria,1
 Albania,Austria,2
 Albania,Belgium,1
@@ -50,7 +49,6 @@ Albania,Switzerland,1
 Albania,Turkey,2
 Albania,UK,1
 Albania,Ukraine,2
-Albania,Vietnam,44
 Algeria,Austria,1
 Algeria,Belgium,1
 Algeria,Bosnia and Herzegovina,1
@@ -82,7 +80,6 @@ Algeria,Sudan,2
 Algeria,Switzerland,1
 Algeria,Turkey,1
 Algeria,UK,1
-Algeria,Vietnam,41
 Argentina,Bolivia,3
 Argentina,Brazil,3
 Argentina,Chile,3
@@ -90,15 +87,14 @@ Argentina,Colombia,2
 Argentina,Mexico,1
 Argentina,Peru,2
 Argentina,US,1
-Argentina,Vietnam,17
+Argentina,Venezuela,2
 Australia,Indonesia,1
 Australia,Malaysia,1
 Australia,New Zealand,1
 Australia,Philippines,1
 Australia,Singapore,1
 Australia,Thailand,1
-Australia,Venezuela,1
-Australia,Vietnam,7
+Australia,Vietnam,1
 Austria,Belgium,2
 Austria,Bosnia and Herzegovina,2
 Austria,Bulgaria,2
@@ -130,7 +126,6 @@ Austria,Switzerland,1
 Austria,Turkey,1
 Austria,UK,1
 Austria,Ukraine,2
-Austria,Vietnam,53
 Bahrain,Egypt,1
 Bahrain,Iran,2
 Bahrain,Iraq,2
@@ -141,7 +136,6 @@ Bahrain,Oman,2
 Bahrain,Pakistan,1
 Bahrain,Saudi Arabia,3
 Bahrain,United Arab Emirates,2
-Bahrain,Vietnam,18
 Bangladesh,Cambodia,2
 Bangladesh,Mainland China,2
 Bangladesh,Hong Kong,1
@@ -154,8 +148,7 @@ Bangladesh,Pakistan,1
 Bangladesh,Singapore,1
 Bangladesh,Sri Lanka,1
 Bangladesh,Thailand,2
-Bangladesh,Venezuela,1
-Bangladesh,Vietnam,20
+Bangladesh,Vietnam,1
 Belgium,Bosnia and Herzegovina,1
 Belgium,Bulgaria,1
 Belgium,Croatia,1
@@ -182,7 +175,6 @@ Belgium,Switzerland,2
 Belgium,Turkey,1
 Belgium,UK,2
 Belgium,Ukraine,1
-Belgium,Vietnam,43
 Bolivia,Brazil,3
 Bolivia,Chad,1
 Bolivia,Chile,3
@@ -190,7 +182,7 @@ Bolivia,Colombia,2
 Bolivia,Mexico,1
 Bolivia,Peru,3
 Bolivia,US,1
-Bolivia,Vietnam,19
+Bolivia,Venezuela,2
 Bosnia and Herzegovina,Bulgaria,2
 Bosnia and Herzegovina,Croatia,3
 Bosnia and Herzegovina,Czech Republic,2
@@ -220,13 +212,12 @@ Bosnia and Herzegovina,Switzerland,1
 Bosnia and Herzegovina,Turkey,1
 Bosnia and Herzegovina,UK,1
 Bosnia and Herzegovina,Ukraine,2
-Bosnia and Herzegovina,Vietnam,47
 Brazil,Chile,2
 Brazil,Colombia,3
 Brazil,Mexico,1
 Brazil,Peru,3
 Brazil,US,1
-Brazil,Vietnam,19
+Brazil,Venezuela,3
 Bulgaria,Croatia,2
 Bulgaria,Czech Republic,1
 Bulgaria,Denmark,1
@@ -254,7 +245,6 @@ Bulgaria,Switzerland,1
 Bulgaria,Turkey,3
 Bulgaria,UK,1
 Bulgaria,Ukraine,2
-Bulgaria,Vietnam,47
 Cambodia,Mainland China,2
 Cambodia,Hong Kong,1
 Cambodia,India,1
@@ -265,8 +255,7 @@ Cambodia,Singapore,2
 Cambodia,Sri Lanka,1
 Cambodia,Taiwan,1
 Cambodia,Thailand,3
-Cambodia,Venezuela,3
-Cambodia,Vietnam,20
+Cambodia,Vietnam,3
 Camerun,Central African Republic,3
 Camerun,Chad,3
 Camerun,Egypt,2
@@ -275,17 +264,14 @@ Camerun,Kenya,1
 Camerun,Libya,2
 Camerun,Morocco,1
 Camerun,Sudan,2
-Camerun,Vietnam,17
 Canada,Greenland,1
 Canada,Mexico,1
 Canada,US,3
-Canada,Vietnam,5
 Central African Republic,Chad,3
 Central African Republic,Kenya,2
 Central African Republic,Libya,2
 Central African Republic,Morocco,1
 Central African Republic,Sudan,3
-Central African Republic,Vietnam,16
 Chad,Egypt,2
 Chad,Ethiopia,2
 Chad,Kenya,1
@@ -294,10 +280,9 @@ Chad,Morocco,2
 Chad,Saudi Arabia,1
 Chad,South Africa,1
 Chad,Sudan,3
-Chad,Vietnam,24
 Chile,Colombia,2
 Chile,Peru,3
-Chile,Vietnam,14
+Chile,Venezuela,1
 Mainland China,Hong Kong,3
 Mainland China,India,3
 Mainland China,Indonesia,1
@@ -315,11 +300,10 @@ Mainland China,Singapore,1
 Mainland China,South Korea,2
 Mainland China,Taiwan,2
 Mainland China,Thailand,2
-Mainland China,Venezuela,3
-Mainland China,Vietnam,44
+Mainland China,Vietnam,3
 Colombia,Mexico,2
 Colombia,Peru,3
-Colombia,Vietnam,17
+Colombia,Venezuela,3
 Croatia,Czech Republic,2
 Croatia,Denmark,1
 Croatia,Egypt,1
@@ -342,7 +326,6 @@ Croatia,Spain,1
 Croatia,Sweden,1
 Croatia,Turkey,1
 Croatia,Ukraine,2
-Croatia,Vietnam,44
 Czech Republic,Denmark,2
 Czech Republic,Estonia,1
 Czech Republic,Finland,1
@@ -365,7 +348,6 @@ Czech Republic,Sweden,1
 Czech Republic,Switzerland,2
 Czech Republic,UK,1
 Czech Republic,Ukraine,2
-Czech Republic,Vietnam,46
 Denmark,Estonia,1
 Denmark,Finland,1
 Denmark,France,2
@@ -385,7 +367,6 @@ Denmark,Sweden,2
 Denmark,Switzerland,1
 Denmark,UK,1
 Denmark,Ukraine,1
-Denmark,Vietnam,37
 Egypt,Ethiopia,2
 Egypt,Greece,1
 Egypt,Hungary,1
@@ -402,7 +383,6 @@ Egypt,Saudi Arabia,3
 Egypt,Spain,1
 Egypt,Sudan,3
 Egypt,Turkey,2
-Egypt,Vietnam,39
 Estonia,Finland,2
 Estonia,France,1
 Estonia,Germany,1
@@ -412,12 +392,10 @@ Estonia,Poland,2
 Estonia,Russia,3
 Estonia,Sweden,2
 Estonia,Ukraine,1
-Estonia,Vietnam,21
 Ethiopia,Kenya,3
 Ethiopia,Libya,2
 Ethiopia,Oman,1
 Ethiopia,Sudan,3
-Ethiopia,Vietnam,15
 Finland,France,1
 Finland,Germany,1
 Finland,Hungary,1
@@ -430,7 +408,6 @@ Finland,Russia,3
 Finland,Sweden,3
 Finland,UK,1
 Finland,Ukraine,1
-Finland,Vietnam,28
 France,Germany,3
 France,Greece,1
 France,Hungary,2
@@ -450,7 +427,6 @@ France,Sweden,1
 France,Switzerland,3
 France,UK,2
 France,Ukraine,1
-France,Vietnam,49
 Germany,Greece,1
 Germany,Hungary,2
 Germany,Iceland,1
@@ -469,7 +445,6 @@ Germany,Sweden,2
 Germany,Switzerland,3
 Germany,UK,1
 Germany,Ukraine,1
-Germany,Vietnam,51
 Greece,Hungary,2
 Greece,Israel,1
 Greece,Italy,1
@@ -481,13 +456,11 @@ Greece,Russia,1
 Greece,Serbia,2
 Greece,Turkey,3
 Greece,Ukraine,1
-Greece,Vietnam,34
 Greenland,Iceland,2
 Greenland,Ireland,1
 Greenland,Norway,1
 Greenland,US,1
 Greenland,UK,1
-Greenland,Vietnam,8
 Hong Kong,Japan,1
 Hong Kong,Macau,3
 Hong Kong,Philippines,1
@@ -495,8 +468,7 @@ Hong Kong,Singapore,1
 Hong Kong,South Korea,1
 Hong Kong,Taiwan,1
 Hong Kong,Thailand,1
-Hong Kong,Venezuela,1
-Hong Kong,Vietnam,15
+Hong Kong,Vietnam,1
 Hungary,Ireland,1
 Hungary,Italy,2
 Hungary,Netherlands,1
@@ -512,12 +484,10 @@ Hungary,Switzerland,2
 Hungary,Turkey,1
 Hungary,UK,1
 Hungary,Ukraine,3
-Hungary,Vietnam,50
 Iceland,Ireland,1
 Iceland,Norway,1
 Iceland,Sweden,1
 Iceland,UK,1
-Iceland,Vietnam,8
 India,Indonesia,1
 India,Iran,2
 India,Iraq,1
@@ -528,15 +498,13 @@ India,Nepal,3
 India,Pakistan,3
 India,Sri Lanka,2
 India,Thailand,1
-India,Venezuela,1
-India,Vietnam,26
+India,Vietnam,1
 Indonesia,Malaysia,3
 Indonesia,Philippines,2
 Indonesia,Singapore,3
 Indonesia,Sri Lanka,1
 Indonesia,Thailand,2
-Indonesia,Venezuela,2
-Indonesia,Vietnam,18
+Indonesia,Vietnam,2
 Iran,Iraq,3
 Iran,Israel,1
 Iran,Kazakhstan,2
@@ -547,7 +515,6 @@ Iran,Russia,1
 Iran,Saudi Arabia,2
 Iran,Turkey,3
 Iran,United Arab Emirates,2
-Iran,Vietnam,29
 Iraq,Israel,2
 Iraq,Kazakhstan,1
 Iraq,Kuwait,3
@@ -558,7 +525,6 @@ Iraq,Russia,1
 Iraq,Saudi Arabia,3
 Iraq,Sudan,1
 Iraq,Turkey,3
-Iraq,Vietnam,29
 Ireland,Italy,1
 Ireland,Netherlands,1
 Ireland,Norway,1
@@ -567,7 +533,6 @@ Ireland,Portugal,1
 Ireland,Spain,1
 Ireland,Switzerland,1
 Ireland,UK,3
-Ireland,Vietnam,22
 Israel,Italy,1
 Israel,Kuwait,2
 Israel,Lebanon,3
@@ -578,7 +543,6 @@ Israel,Saudi Arabia,2
 Israel,Sudan,2
 Israel,Turkey,2
 Israel,United Arab Emirates,1
-Israel,Vietnam,32
 Italy,Libya,1
 Italy,Morocco,1
 Italy,Netherlands,1
@@ -593,41 +557,34 @@ Italy,Switzerland,3
 Italy,Turkey,1
 Italy,UK,1
 Italy,Ukraine,1
-Italy,Vietnam,45
 Japan,Philippines,1
 Japan,Russia,2
 Japan,South Korea,2
 Japan,Taiwan,1
-Japan,Vietnam,8
 Kazakhstan,Mongolia,2
 Kazakhstan,Nepal,1
 Kazakhstan,Pakistan,2
 Kazakhstan,Russia,3
 Kazakhstan,Saudi Arabia,1
 Kazakhstan,Ukraine,2
-Kazakhstan,Vietnam,20
 Kenya,Libya,1
 Kenya,Saudi Arabia,1
 Kenya,South Africa,1
 Kenya,Sudan,2
-Kenya,Vietnam,13
 Kuwait,Lebanon,2
 Kuwait,Oman,2
 Kuwait,Pakistan,1
 Kuwait,Saudi Arabia,3
 Kuwait,Turkey,2
 Kuwait,United Arab Emirates,2
-Kuwait,Vietnam,21
 Lebanon,Libya,2
 Lebanon,Oman,1
 Lebanon,Saudi Arabia,2
 Lebanon,Turkey,2
 Lebanon,United Arab Emirates,1
-Lebanon,Vietnam,23
 Libya,Morocco,2
 Libya,Saudi Arabia,1
 Libya,Sudan,3
-Libya,Vietnam,30
 Macau,Malaysia,1
 Macau,Mongolia,1
 Macau,Philippines,1
@@ -635,29 +592,24 @@ Macau,Singapore,1
 Macau,South Korea,1
 Macau,Taiwan,2
 Macau,Thailand,1
-Macau,Venezuela,2
-Macau,Vietnam,17
+Macau,Vietnam,2
 Malaysia,Philippines,2
 Malaysia,Singapore,3
 Malaysia,Taiwan,1
 Malaysia,Thailand,3
-Malaysia,Venezuela,2
-Malaysia,Vietnam,21
+Malaysia,Vietnam,2
 Mexico,US,3
-Mexico,Vietnam,10
+Mexico,Venezuela,1
 Morocco,Spain,3
 Morocco,Sudan,1
-Morocco,Vietnam,22
 Mongolia,Nepal,1
 Mongolia,Pakistan,1
 Mongolia,Russia,3
 Mongolia,South Korea,1
-Mongolia,Vietnam,14
 Nepal,Pakistan,2
 Nepal,Sri Lanka,1
 Nepal,Thailand,1
-Nepal,Venezuela,1
-Nepal,Vietnam,17
+Nepal,Vietnam,1
 Netherlands,Norway,1
 Netherlands,Poland,2
 Netherlands,Portugal,1
@@ -668,8 +620,6 @@ Netherlands,Sweden,1
 Netherlands,Switzerland,2
 Netherlands,UK,1
 Netherlands,Ukraine,1
-Netherlands,Vietnam,35
-New Zealand,Vietnam,1
 Norway,Poland,1
 Norway,Portugal,1
 Norway,Russia,3
@@ -677,19 +627,15 @@ Norway,Spain,1
 Norway,Sweden,3
 Norway,UK,1
 Norway,Ukraine,1
-Norway,Vietnam,32
 Oman,Pakistan,1
 Oman,Saudi Arabia,3
-Oman,Vietnam,14
 Pakistan,Saudi Arabia,1
 Pakistan,Sri Lanka,1
-Pakistan,Vietnam,26
-Peru,Vietnam,16
+Peru,Venezuela,2
 Philippines,Singapore,1
 Philippines,Taiwan,2
 Philippines,Thailand,1
-Philippines,Venezuela,1
-Philippines,Vietnam,15
+Philippines,Vietnam,1
 Poland,Portugal,1
 Poland,Romania,2
 Poland,Russia,2
@@ -698,13 +644,11 @@ Poland,Spain,1
 Poland,Sweden,1
 Poland,Switzerland,1
 Poland,Ukraine,1
-Poland,Vietnam,42
 Portugal,Spain,3
 Portugal,Sweden,1
 Portugal,Switzerland,1
 Portugal,Turkey,1
 Portugal,UK,1
-Portugal,Vietnam,25
 Romania,Russia,2
 Romania,Serbia,3
 Romania,Spain,1
@@ -712,7 +656,6 @@ Romania,Sweden,1
 Romania,Switzerland,1
 Romania,Turkey,2
 Romania,Ukraine,3
-Romania,Vietnam,41
 Russia,Serbia,1
 Russia,Saudi Arabia,1
 Russia,Sweden,2
@@ -720,51 +663,33 @@ Russia,Turkey,2
 Russia,US,1
 Russia,UK,1
 Russia,Ukraine,3
-Russia,Vietnam,51
 Serbia,Switzerland,1
 Serbia,Turkey,2
 Serbia,Ukraine,2
-Serbia,Vietnam,36
 Saudi Arabia,Sudan,2
 Saudi Arabia,Turkey,2
-Saudi Arabia,Vietnam,33
 Singapore,Sri Lanka,1
 Singapore,Taiwan,1
 Singapore,Thailand,2
-Singapore,Venezuela,2
-Singapore,Vietnam,20
-South Africa,Vietnam,3
+Singapore,Vietnam,2
 South Korea,Taiwan,1
 South Korea,Thailand,1
-South Korea,Venezuela,1
-South Korea,Vietnam,10
+South Korea,Vietnam,1
 Spain,Sweden,1
 Spain,Switzerland,2
 Spain,UK,1
-Spain,Vietnam,33
 Sri Lanka,Thailand,1
-Sri Lanka,Venezuela,1
-Sri Lanka,Vietnam,10
+Sri Lanka,Vietnam,1
 Sudan,Turkey,1
-Sudan,Vietnam,28
 Sweden,Switzerland,1
 Sweden,UK,1
 Sweden,Ukraine,1
-Sweden,Vietnam,33
 Switzerland,UK,1
 Switzerland,Ukraine,1
-Switzerland,Vietnam,33
 Taiwan,Thailand,1
-Taiwan,Venezuela,1
-Taiwan,Vietnam,14
-Thailand,Venezuela,2
-Thailand,Vietnam,25
+Taiwan,Vietnam,1
+Thailand,Vietnam,2
 Turkey,United Arab Emirates,1
 Turkey,Ukraine,2
-Turkey,Vietnam,42
-United Arab Emirates,Vietnam,10
-US,Vietnam,12
+US,Venezuela,1
 UK,Ukraine,1
-UK,Vietnam,28
-Ukraine,Vietnam,41
-Venezuela,Vietnam,15

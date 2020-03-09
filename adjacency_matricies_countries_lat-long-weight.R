@@ -1,10 +1,12 @@
 # Create adjacency matrix for countries
 
-# Johns Hopkins data
+library(dplyr)
+
+## Johns Hopkins data -------------
 
 x = read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv")
 
-# Get average lat and long for all countries
+## Get average lat and long for all countries ----------
 
 x1 <- x %>%
   group_by(Country.Region) %>%

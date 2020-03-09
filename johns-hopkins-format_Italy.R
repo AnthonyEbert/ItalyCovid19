@@ -31,16 +31,16 @@ x_confirmed <- x %>%
   select(-dimessi_guariti, -deceduti) %>%
   tidyr::pivot_wider(id_cols = c(`Province/State`, `Country/Region`,  "Lat", "Long"), names_from = data, values_from = totale_casi) %>% mutate_all(funs(tidyr::replace_na(.,0)))
 
-readr::write_excel_csv(x_confirmed, "johns-hopkins-format/time_series_19-covid-Confirmed_Italy.csv")
+readr::write_csv(x_confirmed, "johns-hopkins-format/time_series_19-covid-Confirmed_Italy.csv")
 
 x_deaths <- x %>%
   select(-dimessi_guariti, -totale_casi) %>%
   tidyr::pivot_wider(id_cols = c(`Province/State`, `Country/Region`,  "Lat", "Long"), names_from = data, values_from = deceduti) %>% mutate_all(funs(tidyr::replace_na(.,0)))
 
-readr::write_excel_csv(x_deaths, "johns-hopkins-format/time_series_19-covid-Deaths_Italy.csv")
+readr::write_csv(x_deaths, "johns-hopkins-format/time_series_19-covid-Deaths_Italy.csv")
 
 x_recovered <- x %>%
   select(-deceduti, -totale_casi) %>%
   tidyr::pivot_wider(id_cols = c(`Province/State`, `Country/Region`,  "Lat", "Long"), names_from = data, values_from = dimessi_guariti) %>% mutate_all(funs(tidyr::replace_na(.,0)))
 
-readr::write_excel_csv(x_recovered, "johns-hopkins-format/time_series_19-covid-Recovered_Italy.csv")
+readr::write_csv(x_recovered, "johns-hopkins-format/time_series_19-covid-Recovered_Italy.csv")

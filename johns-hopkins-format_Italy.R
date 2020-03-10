@@ -1,6 +1,9 @@
 # Johns-Hopkins format
 
 library(dplyr)
+library(glue)
+require(lubridate)
+require(stringr)
 
 x = readr::read_csv("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv")
 x$data <- lubridate::as_date(x$data)
@@ -22,7 +25,7 @@ x <- x %>%
     Long = "long"
   ) %>%
   mutate(
-    data = format(data, format = "%m/%d/%y")
+    data = str_trim(glue("{month(data)}/{day(data)}/{substr(year(data), 3, 4)}"))
   ) %>%
   rename(`Country/Region` = stato) %>%
   mutate(`Country/Region` = "Italy")

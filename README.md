@@ -29,5 +29,16 @@ Transition matricies are downloaded and formatted with the R script `johns-hopki
 
 Same as international
 
+### Transition matricies (Italy)
+
 Transition matricies are downloaded and formatted with the R script `protezione-civile-download.R`. 
+
+The populations of regions sourced from 
+* https://www.tuttitalia.it/regioni/
+* https://www.tuttitalia.it/trentino-alto-adige/
+
+Since we treat "Trenti-Alto Adige" as two regions, since this is how it is treated in the Italian health data. 
+
+
+
 

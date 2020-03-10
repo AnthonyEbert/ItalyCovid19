@@ -27,7 +27,7 @@ x_deaths <- x %>%
   ) %>%
   rename(date = data)
 
-readr::write_excel_csv(x_confirmed, path = "protezione-civile-download/transition_matrix_regione_deaths.csv")
+readr::write_excel_csv(x_deaths, path = "protezione-civile-download/transition_matrix_regione_deaths.csv")
 
 # Recovered
 
@@ -39,6 +39,6 @@ x_recovered <- x %>%
   ) %>%
   rename(date = data)
 
-readr::write_excel_csv(x_confirmed, path = "protezione-civile-download/transition_matrix_regione_recovered.csv")
+readr::write_excel_csv(x_recovered, path = "protezione-civile-download/transition_matrix_regione_recovered.csv")
 
 

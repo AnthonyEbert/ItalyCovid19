@@ -42,3 +42,58 @@ x_recovered <- x %>%
 readr::write_csv(x_recovered, path = "protezione-civile-download/transition_matrix_regione_recovered.csv")
 
 
+
+
+# Ricoverati con sintomi
+
+x_ricoverati_con_sintomi <- x %>%
+  select(data, denominazione_regione, ricoverati_con_sintomi) %>%
+  tidyr::pivot_wider(
+    names_from = denominazione_regione,
+    values_from = ricoverati_con_sintomi
+  ) %>%
+  rename(date = data)
+
+readr::write_csv(x_ricoverati_con_sintomi, path = "protezione-civile-download/transition_matrix_regione_ricoverati_con_sintomi.csv")
+
+
+# Terapia intensiva
+
+x_terapia_intensiva <- x %>%
+  select(data, denominazione_regione, terapia_intensiva) %>%
+  tidyr::pivot_wider(
+    names_from = denominazione_regione,
+    values_from = terapia_intensiva
+  ) %>%
+  rename(date = data)
+
+readr::write_csv(x_terapia_intensiva, path = "protezione-civile-download/transition_matrix_regione_terapia_intensiva.csv")
+
+# Isolamento domiciliare
+
+x_isolamento_domiciliare <- x %>%
+  select(data, denominazione_regione, isolamento_domiciliare) %>%
+  tidyr::pivot_wider(
+    names_from = denominazione_regione,
+    values_from = isolamento_domiciliare
+  ) %>%
+  rename(date = data)
+
+readr::write_csv(x_isolamento_domiciliare, path = "protezione-civile-download/transition_matrix_regione_isolamento_domiciliare.csv")
+
+# Tamponi
+
+x_tamponi <- x %>%
+  select(data, denominazione_regione, tamponi) %>%
+  tidyr::pivot_wider(
+    names_from = denominazione_regione,
+    values_from = tamponi
+  ) %>%
+  rename(date = data)
+
+readr::write_csv(x_tamponi, path = "protezione-civile-download/transition_matrix_regione_tamponi.csv")
+
+
+
+
+

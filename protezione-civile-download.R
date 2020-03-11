@@ -101,7 +101,19 @@ italy_all = x %>%
   select(-long, -lat) %>%
   mutate(suscettibili_non_malati = 60316771 + first(totale_casi)) %>%
   arrange(data) %>%
-  mutate(suscettibili_non_malati = suscettibili_non_malati - totale_casi)
+  mutate(
+    suscettibili_non_malati = suscettibili_non_malati - totale_casi,
+    time = 1:length(totale_casi)
+  ) %>%
+  select(
+    time,
+    suscettibili_non_malati,
+    dimessi_guariti,
+    isolamento_domiciliare,
+    ricoverati_con_sintomi,
+    terapia_intensiva,
+    deceduti
+  )
 
 readr::write_csv(italy_all, path = "protezione-civile-download/italy_all.csv")
 

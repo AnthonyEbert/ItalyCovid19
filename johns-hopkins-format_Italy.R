@@ -7,20 +7,30 @@ require(stringr)
 
 x = readr::read_csv("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv")
 x$data <- lubridate::as_date(x$data)
+x$codice_regione <- as.numeric(x$codice_regione)
+
+level_tst <- levels(factor(x$denominazione_regione[which(x$codice_regione == 4)]))
+x$codice_regione[which(x$denominazione_regione == level_tst[2])] = -1
+
+x <- x %>%
+  group_by(codice_regione) %>%
+  arrange(data) %>%
+  mutate(denominazione_regione = first(denominazione_regione)) %>%
+  ungroup()
 
 x <- x %>%
   select(
-    data, 
-    denominazione_regione, 
+    data,
+    denominazione_regione,
     stato,
-    lat, 
-    long, 
+    lat,
+    long,
     totale_casi,
     dimessi_guariti,
     deceduti
   ) %>%
   rename(
-    `Province/State` = "denominazione_regione", 
+    `Province/State` = "denominazione_regione",
     Lat = "lat",
     Long = "long"
   ) %>%

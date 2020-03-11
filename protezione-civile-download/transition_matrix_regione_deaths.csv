@@ -1,4 +1,4 @@
-date,Abruzzo,Basilicata,Bolzano,Calabria,Campania,Emilia Romagna,Friuli Venezia Giulia,Lazio,Liguria,Lombardia,Marche,Molise,Piemonte,Puglia,Sardegna,Sicilia,Toscana,Trento,Umbria,Valle d'Aosta,Veneto
+date,Abruzzo,Basilicata,P.A. Bolzano,Calabria,Campania,Emilia Romagna,Friuli Venezia Giulia,Lazio,Liguria,Lombardia,Marche,Molise,Piemonte,Puglia,Sardegna,Sicilia,Toscana,P.A. Trento,Umbria,Valle d'Aosta,Veneto
 2020-02-24,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,1
 2020-02-25,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,1
 2020-02-26,0,0,0,0,0,1,0,0,0,9,0,0,0,0,0,0,0,0,0,0,2
@@ -15,3 +15,4 @@ date,Abruzzo,Basilicata,Bolzano,Calabria,Campania,Emilia Romagna,Friuli Venezia 
 2020-03-08,0,0,0,0,0,56,1,3,6,267,7,0,5,3,0,0,0,0,0,0,18
 2020-03-09,0,0,0,0,0,70,1,5,7,333,10,0,13,3,0,0,1,0,0,0,20
 2020-03-10,1,0,0,0,0,85,3,6,8,468,13,0,17,3,0,0,1,0,0,0,26
+2020-03-11,1,0,0,0,1,113,6,6,8,617,18,0,21,5,0,0,1,0,0,1,29

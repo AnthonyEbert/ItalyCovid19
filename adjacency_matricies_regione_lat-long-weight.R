@@ -2,9 +2,21 @@
 
 library(dplyr)
 
-## Johns Hopkins data -------------
+## Protezione Civile data -------------
 
-x = read.csv("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv")
+x = readr::read_csv("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv")
+x$data <- lubridate::as_date(x$data)
+x$codice_regione <- as.numeric(x$codice_regione)
+
+level_tst <- levels(factor(x$denominazione_regione[which(x$codice_regione == 4)]))
+x$codice_regione[which(x$denominazione_regione == level_tst[2])] = -1
+
+x <- x %>%
+  group_by(codice_regione) %>%
+  arrange(data) %>%
+  mutate(denominazione_regione = first(denominazione_regione)) %>%
+  ungroup()
+# Confirmed
 
 ## Get average lat and long for all countries ----------
 

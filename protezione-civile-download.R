@@ -95,5 +95,15 @@ readr::write_csv(x_tamponi, path = "protezione-civile-download/transition_matrix
 
 
 
+italy_all = x %>%
+  group_by(data) %>%
+  summarise_if(is.numeric, sum) %>%
+  select(-long, -lat) %>%
+  mutate(suscettibili_non_malati = 60316771 + first(totale_casi)) %>%
+  arrange(data) %>%
+  mutate(suscettibili_non_malati = suscettibili_non_malati - totale_casi)
+
+readr::write_csv(italy_all, path = "protezione-civile-download/italy_all.csv")
+
 
 

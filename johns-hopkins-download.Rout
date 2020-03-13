@@ -56,6 +56,18 @@ Column `Country.Region` joining factors with different levels, coercing to chara
 > x$key <- stringr::str_sub(x$key, start = 2) %>%
 +   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
 > 
+> full_list <- read.csv("https://raw.githubusercontent.com/AnthonyEbert/COVID-19_ISO-3166/master/full_list.csv")
+> 
+> x_full <- expand.grid(full_list$alpha3, levels(factor(x$key)))
+> x_full <- data.frame(Country.Region = x_full$Var1, key = x_full$Var2)
+> x_full$key <- lubridate::as_date(x_full$key)
+> 
+> x <- dplyr::left_join(x_full, x) %>%
++   mutate(value = replace(.$value, is.na(.$value), 0))
+Joining, by = c("Country.Region", "key")
+Warning message:
+Column `Country.Region` joining factors with different levels, coercing to character vector 
+> 
 > x <- x %>%
 +   tidyr::pivot_wider(
 +     names_from = "Country.Region",
@@ -84,6 +96,12 @@ Column `Country.Region` joining factors with different levels, coercing to chara
 > 
 > x$key <- stringr::str_sub(x$key, start = 2) %>%
 +   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
+> 
+> x <- dplyr::left_join(x_full, x) %>%
++   mutate(value = replace(.$value, is.na(.$value), 0))
+Joining, by = c("Country.Region", "key")
+Warning message:
+Column `Country.Region` joining factors with different levels, coercing to character vector 
 > 
 > x <- x %>%
 +   tidyr::pivot_wider(
@@ -114,6 +132,12 @@ Column `Country.Region` joining factors with different levels, coercing to chara
 > x$key <- stringr::str_sub(x$key, start = 2) %>%
 +   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
 > 
+> x <- dplyr::left_join(x_full, x) %>%
++   mutate(value = replace(.$value, is.na(.$value), 0))
+Joining, by = c("Country.Region", "key")
+Warning message:
+Column `Country.Region` joining factors with different levels, coercing to character vector 
+> 
 > x <- x %>%
 +   tidyr::pivot_wider(
 +     names_from = "Country.Region",
@@ -126,4 +150,4 @@ Column `Country.Region` joining factors with different levels, coercing to chara
 > 
 > proc.time()
    user  system elapsed 
-  2.340   0.348   2.951 
+  2.673   0.320   3.466 

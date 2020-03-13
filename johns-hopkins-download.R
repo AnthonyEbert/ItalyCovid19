@@ -21,6 +21,15 @@ x = x %>%
 x$key <- stringr::str_sub(x$key, start = 2) %>%
   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
 
+full_list <- read.csv("https://raw.githubusercontent.com/AnthonyEbert/COVID-19_ISO-3166/master/full_list.csv")
+
+x_full <- expand.grid(full_list$alpha3, levels(factor(x$key)))
+x_full <- data.frame(Country.Region = x_full$Var1, key = x_full$Var2)
+x_full$key <- lubridate::as_date(x_full$key)
+
+x <- dplyr::left_join(x_full, x) %>%
+  mutate(value = replace(.$value, is.na(.$value), 0))
+
 x <- x %>%
   tidyr::pivot_wider(
     names_from = "Country.Region",
@@ -47,6 +56,9 @@ x = x %>%
 x$key <- stringr::str_sub(x$key, start = 2) %>%
   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
 
+x <- dplyr::left_join(x_full, x) %>%
+  mutate(value = replace(.$value, is.na(.$value), 0))
+
 x <- x %>%
   tidyr::pivot_wider(
     names_from = "Country.Region",
@@ -72,6 +84,9 @@ x = x %>%
 
 x$key <- stringr::str_sub(x$key, start = 2) %>%
   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
+
+x <- dplyr::left_join(x_full, x) %>%
+  mutate(value = replace(.$value, is.na(.$value), 0))
 
 x <- x %>%
   tidyr::pivot_wider(

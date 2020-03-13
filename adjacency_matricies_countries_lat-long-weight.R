@@ -6,6 +6,13 @@ library(dplyr)
 
 x = read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv")
 
+iso3166 <- read.csv("https://raw.githubusercontent.com/AnthonyEbert/COVID-19_ISO-3166/master/JohnsHopkins-to-A3.csv")
+
+x <- x %>%
+  left_join(iso3166) %>%
+  mutate(Country.Region = alpha3) %>%
+  select(-alpha3)
+
 ## Get average lat and long for all countries ----------
 
 x1 <- x %>%

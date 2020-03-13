@@ -127,4 +127,25 @@ italy_all = x %>%
 readr::write_csv(italy_all, path = "protezione-civile-download/italy_all.csv")
 
 
+lombardia_all = x %>%
+  filter(denominazione_regione == "Lombardia") %>%
+  group_by(data) %>%
+  summarise_if(is.numeric, sum) %>%
+  select(-long, -lat) %>%
+  mutate(suscettibili_non_malati = 10060574 + first(totale_casi)) %>%
+  arrange(data) %>%
+  mutate(
+    suscettibili_non_malati = suscettibili_non_malati - totale_casi,
+    time = 1:length(totale_casi)
+  ) %>%
+  select(
+    time,
+    suscettibili_non_malati,
+    dimessi_guariti,
+    isolamento_domiciliare,
+    ricoverati_con_sintomi,
+    terapia_intensiva,
+    deceduti
+  )
 
+readr::write_csv(lombardia_all, path = "protezione-civile-download/lombardia_all.csv")

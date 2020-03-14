@@ -203,4 +203,4 @@ cols(
 > 
 > proc.time()
    user  system elapsed 
-  1.467   0.290   1.536 
+  1.456   0.344   1.649 

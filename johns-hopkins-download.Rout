@@ -150,4 +150,4 @@ Column `Country.Region` joining factors with different levels, coercing to chara
 > 
 > proc.time()
    user  system elapsed 
-  2.673   0.320   3.466 
+  2.526   0.291   3.891 

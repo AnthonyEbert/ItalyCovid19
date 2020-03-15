@@ -52,6 +52,8 @@ Column `Country.Region` joining factors with different levels, coercing to chara
 +   group_by(Country.Region) %>%
 +   summarise_at(names(.)[purrr::partial(startsWith, prefix = "X")(names(.))], sum) %>%
 +   tidyr::gather(,,-Country.Region)
+Warning message:
+Factor `Country.Region` contains implicit NA, consider using `forcats::fct_explicit_na` 
 > 
 > x$key <- stringr::str_sub(x$key, start = 2) %>%
 +   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
@@ -68,14 +70,14 @@ Joining, by = c("Country.Region", "key")
 Warning message:
 Column `Country.Region` joining factors with different levels, coercing to character vector 
 > 
-> x <- x %>%
+> x_confirmed <- x %>%
 +   tidyr::pivot_wider(
 +     names_from = "Country.Region",
 +     values_from = "value"
 +   ) %>%
 +   rename(date = key)
 > 
-> readr::write_excel_csv(x, path = "johns-hopkins-download/transition_matrix_countries_confirmed.csv")
+> readr::write_excel_csv(x_confirmed, path = "johns-hopkins-download/transition_matrix_countries_confirmed.csv")
 > 
 > ## Deaths
 > 
@@ -93,6 +95,8 @@ Column `Country.Region` joining factors with different levels, coercing to chara
 +   group_by(Country.Region) %>%
 +   summarise_at(names(.)[purrr::partial(startsWith, prefix = "X")(names(.))], sum) %>%
 +   tidyr::gather(,,-Country.Region)
+Warning message:
+Factor `Country.Region` contains implicit NA, consider using `forcats::fct_explicit_na` 
 > 
 > x$key <- stringr::str_sub(x$key, start = 2) %>%
 +   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
@@ -103,14 +107,14 @@ Joining, by = c("Country.Region", "key")
 Warning message:
 Column `Country.Region` joining factors with different levels, coercing to character vector 
 > 
-> x <- x %>%
+> x_deaths <- x %>%
 +   tidyr::pivot_wider(
 +     names_from = "Country.Region",
 +     values_from = "value"
 +   ) %>%
 +   rename(date = key)
 > 
-> readr::write_excel_csv(x, path = "johns-hopkins-download/transition_matrix_countries_deaths.csv")
+> readr::write_excel_csv(x_deaths, path = "johns-hopkins-download/transition_matrix_countries_deaths.csv")
 > 
 > ## Recovered
 > 
@@ -128,6 +132,8 @@ Column `Country.Region` joining factors with different levels, coercing to chara
 +   group_by(Country.Region) %>%
 +   summarise_at(names(.)[purrr::partial(startsWith, prefix = "X")(names(.))], sum) %>%
 +   tidyr::gather(,,-Country.Region)
+Warning message:
+Factor `Country.Region` contains implicit NA, consider using `forcats::fct_explicit_na` 
 > 
 > x$key <- stringr::str_sub(x$key, start = 2) %>%
 +   lubridate::as_date(format = "%m.%d.%y", tz = "Europe/London")
@@ -138,16 +144,89 @@ Joining, by = c("Country.Region", "key")
 Warning message:
 Column `Country.Region` joining factors with different levels, coercing to character vector 
 > 
-> x <- x %>%
+> x_recovered <- x %>%
 +   tidyr::pivot_wider(
 +     names_from = "Country.Region",
 +     values_from = "value"
 +   ) %>%
 +   rename(date = key)
 > 
-> readr::write_excel_csv(x, path = "johns-hopkins-download/transition_matrix_countries_recovered.csv")
+> readr::write_excel_csv(x_recovered, path = "johns-hopkins-download/transition_matrix_countries_recovered.csv")
+> 
+> 
+> x_confirmed <- x_confirmed %>%
++   select(date, CHN) %>%
++   mutate(confirmed = CHN) %>%
++   select(-CHN)
+> 
+> x_deaths <- x_deaths %>%
++   select(date, CHN) %>%
++   mutate(deaths = CHN) %>%
++   select(-CHN)
+> 
+> x_recovered <- x_recovered %>%
++   select(date, CHN) %>%
++   mutate(recovered = CHN) %>%
++   select(-CHN)
+> 
+> x2 <- left_join(x_confirmed, x_deaths, by = "date") %>% left_join(x_recovered, by = "date")
+> 
+> x = readr::read_csv("https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv")
+Parsed with column specification:
+cols(
+  .default = col_character(),
+  summary = col_logical(),
+  countRemark = col_logical(),
+  currentConfirmedCount = col_double(),
+  confirmedCount = col_double(),
+  suspectedCount = col_double(),
+  curedCount = col_double(),
+  deadCount = col_double(),
+  seriousCount = col_double(),
+  remark4 = col_logical(),
+  remark5 = col_logical(),
+  abroadRemark = col_logical(),
+  updateTime = col_datetime(format = ""),
+  suspectedIncr = col_double(),
+  currentConfirmedIncr = col_double(),
+  confirmedIncr = col_double(),
+  curedIncr = col_double(),
+  deadIncr = col_double(),
+  seriousIncr = col_double()
+)
+See spec(...) for full column specifications.
+Warning: 104 parsing failures.
+ row         col           expected                     actual                                                                                     file
+2209 summary     1/0/T/F/TRUE/FALSE 挺住，为中国加油！         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2209 countRemark 1/0/T/F/TRUE/FALSE 、                         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2210 summary     1/0/T/F/TRUE/FALSE 挺住，为中国加油！         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2210 remark4     1/0/T/F/TRUE/FALSE 是否已经确定传播途径       'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2211 summary     1/0/T/F/TRUE/FALSE 总结语：挺住，为中国加油！ 'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+.... ........... ....... [... truncated]
+> 
+> x1 <- x %>%
++   mutate(date = lubridate::as_date(updateTime)) %>%
++   group_by(date) %>%
++   summarise(terapia_intensiva = max(seriousCount, na.rm = TRUE))
+> 
+> china_all <- left_join(x2, x1)
+Joining, by = "date"
+> 
+> china_all <- china_all %>%
++   arrange(date) %>%
++   mutate(
++     time = 1:n(),
++     suscettibili_non_malati = 58.5e6 - confirmed,
++     dimessi_guariti = recovered,
++     deceduti = deaths
++   ) %>%
++   select(time, suscettibili_non_malati, dimessi_guariti, terapia_intensiva, deceduti)
+> 
+> 
+> readr::write_csv(china_all, "china_all.csv")
+> 
 > 
 > 
 > proc.time()
    user  system elapsed 
-  2.526   0.291   3.891 
+  2.962   0.354   5.570 

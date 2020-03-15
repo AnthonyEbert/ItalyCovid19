@@ -30,14 +30,14 @@ x_full$key <- lubridate::as_date(x_full$key)
 x <- dplyr::left_join(x_full, x) %>%
   mutate(value = replace(.$value, is.na(.$value), 0))
 
-x <- x %>%
+x_confirmed <- x %>%
   tidyr::pivot_wider(
     names_from = "Country.Region",
     values_from = "value"
   ) %>%
   rename(date = key)
 
-readr::write_excel_csv(x, path = "johns-hopkins-download/transition_matrix_countries_confirmed.csv")
+readr::write_excel_csv(x_confirmed, path = "johns-hopkins-download/transition_matrix_countries_confirmed.csv")
 
 ## Deaths
 
@@ -59,14 +59,14 @@ x$key <- stringr::str_sub(x$key, start = 2) %>%
 x <- dplyr::left_join(x_full, x) %>%
   mutate(value = replace(.$value, is.na(.$value), 0))
 
-x <- x %>%
+x_deaths <- x %>%
   tidyr::pivot_wider(
     names_from = "Country.Region",
     values_from = "value"
   ) %>%
   rename(date = key)
 
-readr::write_excel_csv(x, path = "johns-hopkins-download/transition_matrix_countries_deaths.csv")
+readr::write_excel_csv(x_deaths, path = "johns-hopkins-download/transition_matrix_countries_deaths.csv")
 
 ## Recovered
 
@@ -88,12 +88,53 @@ x$key <- stringr::str_sub(x$key, start = 2) %>%
 x <- dplyr::left_join(x_full, x) %>%
   mutate(value = replace(.$value, is.na(.$value), 0))
 
-x <- x %>%
+x_recovered <- x %>%
   tidyr::pivot_wider(
     names_from = "Country.Region",
     values_from = "value"
   ) %>%
   rename(date = key)
 
-readr::write_excel_csv(x, path = "johns-hopkins-download/transition_matrix_countries_recovered.csv")
+readr::write_excel_csv(x_recovered, path = "johns-hopkins-download/transition_matrix_countries_recovered.csv")
+
+
+x_confirmed <- x_confirmed %>%
+  select(date, CHN) %>%
+  mutate(confirmed = CHN) %>%
+  select(-CHN)
+
+x_deaths <- x_deaths %>%
+  select(date, CHN) %>%
+  mutate(deaths = CHN) %>%
+  select(-CHN)
+
+x_recovered <- x_recovered %>%
+  select(date, CHN) %>%
+  mutate(recovered = CHN) %>%
+  select(-CHN)
+
+x2 <- left_join(x_confirmed, x_deaths, by = "date") %>% left_join(x_recovered, by = "date")
+
+x = readr::read_csv("https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv")
+
+x1 <- x %>%
+  mutate(date = lubridate::as_date(updateTime)) %>%
+  group_by(date) %>%
+  summarise(terapia_intensiva = max(seriousCount, na.rm = TRUE))
+
+china_all <- left_join(x2, x1)
+
+china_all <- china_all %>%
+  arrange(date) %>%
+  mutate(
+    time = 1:n(),
+    suscettibili_non_malati = 58.5e6 - confirmed,
+    dimessi_guariti = recovered,
+    deceduti = deaths
+  ) %>%
+  select(time, suscettibili_non_malati, dimessi_guariti, terapia_intensiva, deceduti)
+
+
+readr::write_csv(china_all, "china_all.csv")
+
 

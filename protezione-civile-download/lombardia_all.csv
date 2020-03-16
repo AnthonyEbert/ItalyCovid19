@@ -1,4 +1,4 @@
-time,suscettibili_non_malati,dimessi_guariti,isolamento_domiciliare,ricoverati_con_sintomi,terapia_intensiva,deceduti
+time,susc_not_ill,recovered,quarantined,hp_symptoms,hp_intensive,deceased
 1,10060574,0,71,76,19,6
 2,10060506,0,127,79,25,9
 3,10060488,0,145,79,25,9
@@ -20,3 +20,4 @@ time,suscettibili_non_malati,dimessi_guariti,isolamento_domiciliare,ricoverati_c
 19,10050926,1198,2647,4435,650,890
 20,10049061,1660,3429,4898,732,966
 21,10047474,2011,3776,5500,767,1218
+22,10046097,2368,3867,6171,823,1420

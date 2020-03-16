@@ -108,7 +108,7 @@ italy_all = x %>%
   group_by(data) %>%
   summarise_if(is.numeric, sum) %>%
   select(-long, -lat) %>%
-  mutate(suscettibili_non_malati = 60316771 + first(totale_casi)) %>%
+  mutate(suscettibili_non_malati = 60317000) %>%
   arrange(data) %>%
   mutate(
     suscettibili_non_malati = suscettibili_non_malati - totale_casi,
@@ -122,7 +122,17 @@ italy_all = x %>%
     ricoverati_con_sintomi,
     terapia_intensiva,
     deceduti
+  ) %>%
+  transmute(
+    time,
+    susc_not_ill = suscettibili_non_malati,
+    recovered = dimessi_guariti,
+    quarantined = isolamento_domiciliare,
+    hp_symptoms = ricoverati_con_sintomi,
+    hp_intensive = terapia_intensiva,
+    deceased = deceduti
   )
+
 
 readr::write_csv(italy_all, path = "protezione-civile-download/italy_all.csv")
 
@@ -146,6 +156,15 @@ lombardia_all = x %>%
     ricoverati_con_sintomi,
     terapia_intensiva,
     deceduti
+  ) %>%
+  transmute(
+    time,
+    susc_not_ill = suscettibili_non_malati,
+    recovered = dimessi_guariti,
+    quarantined = isolamento_domiciliare,
+    hp_symptoms = ricoverati_con_sintomi,
+    hp_intensive = terapia_intensiva,
+    deceased = deceduti
   )
 
 readr::write_csv(lombardia_all, path = "protezione-civile-download/lombardia_all.csv")

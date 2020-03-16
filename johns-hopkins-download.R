@@ -128,13 +128,13 @@ china_all <- china_all %>%
   arrange(date) %>%
   mutate(
     time = 1:n(),
-    suscettibili_non_malati = 58.5e6 - confirmed,
+    suscettibili_non_malati = 59.02e6 - confirmed,
     dimessi_guariti = recovered,
     deceduti = deaths
   ) %>%
   select(time, suscettibili_non_malati, dimessi_guariti, terapia_intensiva, deceduti)
 
 
-readr::write_csv(china_all, "china_all.csv")
+readr::write_csv(china_all, "johns-hopkins-download/china_all.csv")
 
 

@@ -132,7 +132,16 @@ china_all <- china_all %>%
     dimessi_guariti = recovered,
     deceduti = deaths
   ) %>%
-  select(time, suscettibili_non_malati, dimessi_guariti, terapia_intensiva, deceduti)
+  select(time, suscettibili_non_malati, dimessi_guariti, terapia_intensiva, deceduti, confirmed) %>%
+  transmute(
+    time,
+    susc_not_ill = suscettibili_non_malati,
+    recovered = dimessi_guariti,
+    hp_intensive = terapia_intensiva,
+    deceased = deceduti,
+    active = confirmed - deceased - recovered
+  )
+
 
 
 readr::write_csv(china_all, "johns-hopkins-download/china_all.csv")

@@ -1,4 +1,4 @@
-time,susc_not_ill,recovered,quarantined,hp_symptoms,hp_intensive,deceased
+time,susc_not_ill,recovered,quarantene,hospitalized,intensive_care,deceased
 1,10060574,0,71,76,19,6
 2,10060506,0,127,79,25,9
 3,10060488,0,145,79,25,9

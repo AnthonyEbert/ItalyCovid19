@@ -132,17 +132,31 @@ china_all <- china_all %>%
     dimessi_guariti = recovered,
     deceduti = deaths
   ) %>%
-  select(time, suscettibili_non_malati, dimessi_guariti, terapia_intensiva, deceduti, confirmed) %>%
+  select(date, time, suscettibili_non_malati, dimessi_guariti, terapia_intensiva, deceduti, confirmed) %>%
   transmute(
+    date,
     time,
     susc_not_ill = suscettibili_non_malati,
     recovered = dimessi_guariti,
-    hp_intensive = terapia_intensiva,
+    intensive_care = terapia_intensiva,
     deceased = deceduti,
     active = confirmed - deceased - recovered
   )
 
+isolamento_dominciliare <- readr::read_csv("isolamento_domiciliare.csv")
 
+china_all <- left_join(china_all, isolamento_dominciliare) %>%
+  mutate(intensive_care = replace(.$intensive_care, !is.finite(.$intensive_care), 0)) %>%
+  transmute(
+    date,
+    time,
+    susc_not_ill,
+    recovered,
+    quarantene = isolamento_domiciliare,
+    intensive_care,
+    deceased,
+    active
+  )
 
 readr::write_csv(china_all, "johns-hopkins-download/china_all.csv")
 

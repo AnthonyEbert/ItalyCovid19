@@ -143,7 +143,7 @@ china_all <- china_all %>%
     active = confirmed - deceased - recovered
   )
 
-isolamento_dominciliare <- readr::read_csv("isolamento_domiciliare.csv")
+isolamento_dominciliare <- readr::read_csv("China_isolamento_domiciliare.csv")
 
 china_all <- left_join(china_all, isolamento_dominciliare) %>%
   mutate(intensive_care = replace(.$intensive_care, !is.finite(.$intensive_care), 0)) %>%

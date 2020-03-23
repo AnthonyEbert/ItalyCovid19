@@ -183,25 +183,25 @@ cols(
   curedCount = col_double(),
   deadCount = col_double(),
   seriousCount = col_double(),
-  remark4 = col_logical(),
-  remark5 = col_logical(),
-  abroadRemark = col_logical(),
-  updateTime = col_datetime(format = ""),
   suspectedIncr = col_double(),
   currentConfirmedIncr = col_double(),
   confirmedIncr = col_double(),
   curedIncr = col_double(),
   deadIncr = col_double(),
-  seriousIncr = col_double()
+  seriousIncr = col_double(),
+  remark4 = col_logical(),
+  remark5 = col_logical(),
+  abroadRemark = col_logical(),
+  updateTime = col_datetime(format = "")
 )
 See spec(...) for full column specifications.
 Warning: 104 parsing failures.
  row         col           expected                     actual                                                                                     file
-2553 summary     1/0/T/F/TRUE/FALSE 挺住，为中国加油！         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
-2553 countRemark 1/0/T/F/TRUE/FALSE 、                         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
-2554 summary     1/0/T/F/TRUE/FALSE 挺住，为中国加油！         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
-2554 remark4     1/0/T/F/TRUE/FALSE 是否已经确定传播途径       'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
-2555 summary     1/0/T/F/TRUE/FALSE 总结语：挺住，为中国加油！ 'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2692 summary     1/0/T/F/TRUE/FALSE 挺住，为中国加油！         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2692 countRemark 1/0/T/F/TRUE/FALSE 、                         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2693 summary     1/0/T/F/TRUE/FALSE 挺住，为中国加油！         'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2693 remark4     1/0/T/F/TRUE/FALSE 是否已经确定传播途径       'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
+2694 summary     1/0/T/F/TRUE/FALSE 总结语：挺住，为中国加油！ 'https://raw.githubusercontent.com/BlankerL/DXY-COVID-19-Data/master/csv/DXYOverall.csv'
 .... ........... ....... [... truncated]
 > 
 > x1 <- x %>%
@@ -239,7 +239,7 @@ cols(
 )
 > 
 > china_all <- left_join(china_all, isolamento_dominciliare) %>%
-+   mutate(intensive_care = replace(.$intensive_care, !is.finite(.$intensive_care), 0)) %>%
++   mutate(intensive_care = replace(.$intensive_care, !is.finite(.$intensive_care), NA)) %>%
 +   transmute(
 +     date,
 +     time,
@@ -258,4 +258,4 @@ Joining, by = "date"
 > 
 > proc.time()
    user  system elapsed 
-   3.35    0.40    5.41 
+  3.533   0.368   4.749 

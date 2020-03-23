@@ -128,7 +128,7 @@ china_all <- china_all %>%
   arrange(date) %>%
   mutate(
     time = 1:n(),
-    suscettibili_non_malati = 59.02e6 - confirmed,
+    suscettibili_non_malati = 1439323776 - confirmed,
     dimessi_guariti = recovered,
     deceduti = deaths
   ) %>%

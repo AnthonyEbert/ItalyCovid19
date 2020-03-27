@@ -52,7 +52,9 @@ cols(
   dimessi_guariti = col_double(),
   deceduti = col_double(),
   totale_casi = col_double(),
-  tamponi = col_double()
+  tamponi = col_double(),
+  note_it = col_character(),
+  note_en = col_character()
 )
 > x$data <- lubridate::as_date(x$data)
 > x$codice_regione <- as.numeric(x$codice_regione)
@@ -221,4 +223,4 @@ cols(
 > 
 > proc.time()
    user  system elapsed 
-  1.540   0.351   1.482 
+  1.436   0.321   1.405 

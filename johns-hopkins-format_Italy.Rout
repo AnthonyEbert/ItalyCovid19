@@ -71,7 +71,9 @@ cols(
   dimessi_guariti = col_double(),
   deceduti = col_double(),
   totale_casi = col_double(),
-  tamponi = col_double()
+  tamponi = col_double(),
+  note_it = col_character(),
+  note_en = col_character()
 )
 > x$data <- lubridate::as_date(x$data)
 > x$codice_regione <- as.numeric(x$codice_regione)
@@ -140,4 +142,4 @@ This warning is displayed once per session.
 > 
 > proc.time()
    user  system elapsed 
-  1.591   0.339   1.536 
+  1.396   0.290   1.347 

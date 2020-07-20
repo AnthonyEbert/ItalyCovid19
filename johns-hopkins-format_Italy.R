@@ -38,7 +38,7 @@ x <- x %>%
     data = str_trim(glue("{month(data)}/{day(data)}/{substr(year(data), 3, 4)}"))
   ) %>%
   rename(`Country/Region` = stato) %>%
-  mutate(`Country/Region` = "Italy")
+  mutate(`Country/Region` = "Italia")
 
 x_confirmed <- x %>%
   select(-dimessi_guariti, -deceduti) %>%

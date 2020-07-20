@@ -46,7 +46,8 @@ x_confirmed <- x %>%
   bind_rows(readr::read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv")) %>%
   filter(`Country/Region` != "Italy") %>%
   group_by(`Province/State`, `Country/Region`) %>%
-  slice_head()
+  slice_head() %>%
+  .[,c(1:4, 4 + order(as.Date(names(.)[-c(1:4)],format="%m/%d/%Y")))]
 
 readr::write_csv(x_confirmed, "johns-hopkins-format/time_series_19-covid-Confirmed_Italy.csv")
 
@@ -56,7 +57,8 @@ x_deaths <- x %>%
   bind_rows(readr::read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")) %>%
   filter(`Country/Region` != "Italy") %>% 
   group_by(`Province/State`, `Country/Region`, Lat, Long) %>%
-  slice_head()
+  slice_head() %>%
+  .[,c(1:4, 4 + order(as.Date(names(.)[-c(1:4)],format="%m/%d/%Y")))]
 
 readr::write_csv(x_deaths, "johns-hopkins-format/time_series_19-covid-Deaths_Italy.csv")
 
